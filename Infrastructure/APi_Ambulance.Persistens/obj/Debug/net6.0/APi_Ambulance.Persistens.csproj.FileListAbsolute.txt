@@ -1,0 +1,17 @@
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\bin\Debug\net6.0\APi_Ambulance.Persistens.deps.json
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\bin\Debug\net6.0\APi_Ambulance.Persistens.runtimeconfig.json
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\bin\Debug\net6.0\APi_Ambulance.Persistens.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\bin\Debug\net6.0\APi_Ambulance.Persistens.pdb
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\bin\Debug\net6.0\APi_Ambulance.Domain.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\bin\Debug\net6.0\APi_Ambulance.Domain.pdb
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\APi_Ambulance.Persistens.csproj.AssemblyReference.cache
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\APi_Ambulance.Persistens.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\APi_Ambulance.Persistens.AssemblyInfoInputs.cache
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\APi_Ambulance.Persistens.AssemblyInfo.cs
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\APi_Ambulance.Persistens.csproj.CoreCompileInputs.cache
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\APi_Ambulance.Persistens.csproj.CopyComplete
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\APi_Ambulance.Persistens.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\refint\APi_Ambulance.Persistens.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\APi_Ambulance.Persistens.pdb
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\APi_Ambulance.Persistens.genruntimeconfig.cache
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Infrastructure\APi_Ambulance.Persistens\obj\Debug\net6.0\ref\APi_Ambulance.Persistens.dll

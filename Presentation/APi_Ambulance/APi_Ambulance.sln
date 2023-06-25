@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APi_Ambulance", "APi_Ambulance.csproj", "{4FEC7D88-5E5D-48C6-8455-0EE9D5A40735}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{07EC0BE7-3D6D-4158-A46D-A746EFF32537}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{B66F18E8-150A-494E-8874-1B828C9DCD2D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{1DC90723-9ACA-49C8-B5FF-DF57F6B8E587}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{CC0A4662-1F1D-4F90-806E-8915122F559B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{B7D59A8D-0FCE-4C26-B11A-1897D85BAF21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APi_Ambulance.Domain", "..\..\Core\APi_Ambulance.Domain\APi_Ambulance.Domain.csproj", "{8B82B788-9394-4700-9B7B-4CBD98764B46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APi_Ambulance.Persistens", "..\..\Infrastructure\APi_Ambulance.Persistens\APi_Ambulance.Persistens.csproj", "{CFE8655C-243E-477E-AF74-27E2682C06C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FEC7D88-5E5D-48C6-8455-0EE9D5A40735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FEC7D88-5E5D-48C6-8455-0EE9D5A40735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FEC7D88-5E5D-48C6-8455-0EE9D5A40735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FEC7D88-5E5D-48C6-8455-0EE9D5A40735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B82B788-9394-4700-9B7B-4CBD98764B46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B82B788-9394-4700-9B7B-4CBD98764B46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B82B788-9394-4700-9B7B-4CBD98764B46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B82B788-9394-4700-9B7B-4CBD98764B46}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE8655C-243E-477E-AF74-27E2682C06C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE8655C-243E-477E-AF74-27E2682C06C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE8655C-243E-477E-AF74-27E2682C06C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE8655C-243E-477E-AF74-27E2682C06C2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4FEC7D88-5E5D-48C6-8455-0EE9D5A40735} = {07EC0BE7-3D6D-4158-A46D-A746EFF32537}
+		{8B82B788-9394-4700-9B7B-4CBD98764B46} = {B66F18E8-150A-494E-8874-1B828C9DCD2D}
+		{CFE8655C-243E-477E-AF74-27E2682C06C2} = {1DC90723-9ACA-49C8-B5FF-DF57F6B8E587}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {128918FA-CE98-42A9-9CFB-7561D503510B}
+	EndGlobalSection
+EndGlobal

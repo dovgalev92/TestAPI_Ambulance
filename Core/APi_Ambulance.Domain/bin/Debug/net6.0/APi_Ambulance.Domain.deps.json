@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "APi_Ambulance.Domain/1.0.0": {
+        "runtime": {
+          "APi_Ambulance.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "APi_Ambulance.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
