@@ -767,21 +767,6 @@
           }
         }
       },
-      "API_Ambulance.Application/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "APi_Ambulance.Persistens": "1.0.0",
-          "AutoMapper": "12.0.1",
-          "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1"
-        },
-        "compile": {
-          "bin/placeholder/API_Ambulance.Application.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/API_Ambulance.Application.dll": {}
-        }
-      },
       "APi_Ambulance.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2002,15 +1987,10 @@
         "version.txt"
       ]
     },
-    "API_Ambulance.Application/1.0.0": {
-      "type": "project",
-      "path": "../API_Ambulance.Application/API_Ambulance.Application.csproj",
-      "msbuildProject": "../API_Ambulance.Application/API_Ambulance.Application.csproj"
-    },
     "APi_Ambulance.Domain/1.0.0": {
       "type": "project",
-      "path": "../../Core/APi_Ambulance.Domain/APi_Ambulance.Domain.csproj",
-      "msbuildProject": "../../Core/APi_Ambulance.Domain/APi_Ambulance.Domain.csproj"
+      "path": "../APi_Ambulance.Domain/APi_Ambulance.Domain.csproj",
+      "msbuildProject": "../APi_Ambulance.Domain/APi_Ambulance.Domain.csproj"
     },
     "APi_Ambulance.Persistens/1.0.0": {
       "type": "project",
@@ -2020,8 +2000,10 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "API_Ambulance.Application >= 1.0.0",
-      "APi_Ambulance.Persistens >= 1.0.0"
+      "APi_Ambulance.Domain >= 1.0.0",
+      "APi_Ambulance.Persistens >= 1.0.0",
+      "AutoMapper >= 12.0.1",
+      "AutoMapper.Extensions.Microsoft.DependencyInjection >= 12.0.1"
     ]
   },
   "packageFolders": {
@@ -2030,11 +2012,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Presentation\\API_Ambulance.ServicesLayer\\API_Ambulance.ServicesLayer.csproj",
-      "projectName": "API_Ambulance.ServicesLayer",
-      "projectPath": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Presentation\\API_Ambulance.ServicesLayer\\API_Ambulance.ServicesLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Core\\API_Ambulance.Application\\API_Ambulance.Application.csproj",
+      "projectName": "API_Ambulance.Application",
+      "projectPath": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Core\\API_Ambulance.Application\\API_Ambulance.Application.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Presentation\\API_Ambulance.ServicesLayer\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Core\\API_Ambulance.Application\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -2051,11 +2033,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Core\\APi_Ambulance.Domain\\APi_Ambulance.Domain.csproj": {
+              "projectPath": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Core\\APi_Ambulance.Domain\\APi_Ambulance.Domain.csproj"
+            },
             "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Infrastructure\\APi_Ambulance.Persistens\\APi_Ambulance.Persistens.csproj": {
               "projectPath": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Infrastructure\\APi_Ambulance.Persistens\\APi_Ambulance.Persistens.csproj"
-            },
-            "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Presentation\\API_Ambulance.Application\\API_Ambulance.Application.csproj": {
-              "projectPath": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Presentation\\API_Ambulance.Application\\API_Ambulance.Application.csproj"
             }
           }
         }
@@ -2069,6 +2051,16 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "AutoMapper": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          },
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+            "target": "Package",
+            "version": "[12.0.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

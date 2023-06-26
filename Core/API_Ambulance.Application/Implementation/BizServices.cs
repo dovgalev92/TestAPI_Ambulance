@@ -1,4 +1,5 @@
-﻿using APi_Ambulance.Domain.DTO.DTOPatient;
+﻿
+using APi_Ambulance.Domain.DTO.DTOPatient;
 using APi_Ambulance.Domain.Entity;
 using APi_Ambulance.Persistens.Repository.Interfaces;
 using API_Ambulance.Application.GenericInterfaces;
@@ -10,29 +11,28 @@ namespace API_Ambulance.Application.Implementation
     {
         private readonly IRepository<Patient, PatientWriteDto> _repository;
         private IMapper _mapper;
-        public BizServices(IMapper mapper, IRepository<Patient, PatientWriteDto> repository)
+
+        public BizServices(IRepository<Patient, PatientWriteDto> repository, IMapper mapper)
         {
-            _mapper = mapper;
             _repository = repository;
-
+            _mapper = mapper;
         }
-
-        public Task<IEnumerable<Patient>> ReadAllCommand()
+        public void AddCommandServices(PatientWriteDto create)
         {
             throw new NotImplementedException();
         }
 
-        public Task<Patient> ReadCommandId(int id)
+        public Task<IEnumerable<Patient>> GetAllCommandServices()
         {
             throw new NotImplementedException();
         }
 
-        public Task UpdateCommand(PatientWriteDto update)
+        public Task<Patient> GetCommandIdServices(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void WriteNewCommand(PatientWriteDto write)
+        public Task UpdateCommandServices(PatientWriteDto update)
         {
             throw new NotImplementedException();
         }

@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APi_Ambulance.Domain", "..\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APi_Ambulance.Persistens", "..\..\Infrastructure\APi_Ambulance.Persistens\APi_Ambulance.Persistens.csproj", "{CFE8655C-243E-477E-AF74-27E2682C06C2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API_Ambulance.Application", "..\API_Ambulance.Application\API_Ambulance.Application.csproj", "{D6DB0EA2-08FB-41C1-8155-7A68C1AF3BF3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_Ambulance.Application", "..\..\Core\API_Ambulance.Application\API_Ambulance.Application.csproj", "{5B6BEE68-99F6-48B1-B48A-972EC65E4176}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +37,10 @@ Global
 		{CFE8655C-243E-477E-AF74-27E2682C06C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFE8655C-243E-477E-AF74-27E2682C06C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFE8655C-243E-477E-AF74-27E2682C06C2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D6DB0EA2-08FB-41C1-8155-7A68C1AF3BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D6DB0EA2-08FB-41C1-8155-7A68C1AF3BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D6DB0EA2-08FB-41C1-8155-7A68C1AF3BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D6DB0EA2-08FB-41C1-8155-7A68C1AF3BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B6BEE68-99F6-48B1-B48A-972EC65E4176}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B6BEE68-99F6-48B1-B48A-972EC65E4176}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B6BEE68-99F6-48B1-B48A-972EC65E4176}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B6BEE68-99F6-48B1-B48A-972EC65E4176}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -49,7 +49,7 @@ Global
 		{4FEC7D88-5E5D-48C6-8455-0EE9D5A40735} = {07EC0BE7-3D6D-4158-A46D-A746EFF32537}
 		{8B82B788-9394-4700-9B7B-4CBD98764B46} = {B66F18E8-150A-494E-8874-1B828C9DCD2D}
 		{CFE8655C-243E-477E-AF74-27E2682C06C2} = {1DC90723-9ACA-49C8-B5FF-DF57F6B8E587}
-		{D6DB0EA2-08FB-41C1-8155-7A68C1AF3BF3} = {B66F18E8-150A-494E-8874-1B828C9DCD2D}
+		{5B6BEE68-99F6-48B1-B48A-972EC65E4176} = {B66F18E8-150A-494E-8874-1B828C9DCD2D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {128918FA-CE98-42A9-9CFB-7561D503510B}

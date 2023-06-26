@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HL1gb0HwrTo3x+fqWz75V6UiXbbdCzzVcaSt0iWr++Yi0uXcFTT0fcBqBoerw0qQzUKUJ8+N5So4LxHZVAvWQg==",
+  "dgSpecHash": "6XvVTwQlrjRNyag1jcpU8NHhCM72u4XVnmpgoPgFLrJoDB6OpayQ/xNyco+1InlsjHWNbXLM11GfK0e+J378qw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Presentation\\API_Ambulance.ServicesLayer\\API_Ambulance.ServicesLayer.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\ProjectFilles\\APi_Ambulance\\Core\\API_Ambulance.Application\\API_Ambulance.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

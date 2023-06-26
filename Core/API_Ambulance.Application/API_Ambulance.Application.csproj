@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Infrastructure\APi_Ambulance.Persistens\APi_Ambulance.Persistens.csproj" />
+    <ProjectReference Include="..\APi_Ambulance.Domain\APi_Ambulance.Domain.csproj" />
   </ItemGroup>
 
 </Project>

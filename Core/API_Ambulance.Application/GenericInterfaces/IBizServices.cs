@@ -8,10 +8,9 @@ namespace API_Ambulance.Application.GenericInterfaces
 {
     public interface IBizServices<in TIn, TOut>
     {
-        void WriteNewCommand(TIn write);
-        Task<TOut> ReadCommandId(int id);
-        Task UpdateCommand(TIn update);
-        Task<IEnumerable<TOut>> ReadAllCommand();
-
+        void AddCommandServices(TIn create);
+        Task<IEnumerable<TOut>> GetAllCommandServices();
+        Task<TOut> GetCommandIdServices(int id);
+        Task UpdateCommandServices(TIn update);
     }
 }

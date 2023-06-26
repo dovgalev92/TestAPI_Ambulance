@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 
-namespace APi_Ambulance.Domain.DTO.DTOPatient
+namespace APi_Ambulance.Domain.DTO.DToPatient
 {
     public class PatientReadDto
     {
