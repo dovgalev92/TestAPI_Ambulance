@@ -2,12 +2,12 @@
 
 namespace APi_Ambulance.Persistens.Repository.Interfaces
 {
-    public interface IRepository<in Tin, TOut>
+    public interface IRepository<T>
     {
-        void AddNewCommandAsync(Tin create);
-        Task<IEnumerable<TOut>> GetAllCommandAsync();
-        Task<TOut> GetCommandIdAsync(int id);
-        Task UpdateCommandAsync(Tin update);
+        void AddNewCommandAsync(T create);
+        Task<IEnumerable<T>> GetAllCommandAsync();
+        Task<T> GetCommandIdAsync(int id);
+        Task UpdateCommandAsync(T update);
         
     }
 }

@@ -3,28 +3,39 @@ using APi_Ambulance.Domain.Entity;
 using APi_Ambulance.Domain.DTO.DTOPatient;
 using Microsoft.EntityFrameworkCore;
 using APi_Ambulance.Persistens.CodeEfCore;
+using APi_Ambulance.Domain.DTO.DToPatient;
 
 namespace APi_Ambulance.Persistens.Repository.Implementations
 {
-    public class EmplementationRepository : IRepository<Patient, PatientWriteDto>
+    public class EmplementationRepository : IRepository<Patient>
     {
         private readonly EfCoreDbContext _context;
         public EmplementationRepository(EfCoreDbContext context)
         {
             _context = context;
         }
+
         public void AddNewCommandAsync(Patient create)
         {
+            if(create==null)
+            {
+                throw new ArgumentNullException(nameof(create));
+            }
             _context.Entry(create).State = EntityState.Added;
             _context.SaveChanges();
         }
 
-        public Task<IEnumerable<PatientWriteDto>> GetAllCommandAsync()
+        public async Task<IEnumerable<Patient>> GetAllCommandAsync()
         {
-            throw new NotImplementedException();
+            return  await _context.Patients!.Include(c => c.CallingAmbulances)
+                .Include(a => a.AmbulanceDepartures)
+                .Include(l => l.Locality)
+                .ThenInclude(s => s.Streets)
+                .AsNoTracking()
+                .ToListAsync();
         }
 
-        public Task<PatientWriteDto> GetCommandIdAsync(int id)
+        public Task<Patient> GetCommandIdAsync(int id)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +44,5 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
         {
             throw new NotImplementedException();
         }
-      
-
     }
 }

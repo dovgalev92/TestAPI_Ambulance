@@ -16,10 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <ProjectReference Include="..\..\Core\API_Ambulance.Application\API_Ambulance.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\APi_Ambulance.Persistens\APi_Ambulance.Persistens.csproj" />
   </ItemGroup>
 

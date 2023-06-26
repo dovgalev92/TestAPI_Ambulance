@@ -75,3 +75,7 @@ C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\obj\Debug\
 C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\obj\Debug\net6.0\APi_Ambulance.pdb
 C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\obj\Debug\net6.0\APi_Ambulance.genruntimeconfig.cache
 C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\obj\Debug\net6.0\ref\APi_Ambulance.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\API_Ambulance.Application.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\API_Ambulance.Application.pdb

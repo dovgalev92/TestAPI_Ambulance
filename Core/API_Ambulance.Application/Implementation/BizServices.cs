@@ -9,17 +9,18 @@ namespace API_Ambulance.Application.Implementation
 {
     public class BizServices : IBizServices<PatientWriteDto, Patient>
     {
-        private readonly IRepository<Patient, PatientWriteDto> _repository;
+        private readonly IRepository<Patient> _repository;
         private IMapper _mapper;
 
-        public BizServices(IRepository<Patient, PatientWriteDto> repository, IMapper mapper)
+        public BizServices(IRepository<Patient> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
         public void AddCommandServices(PatientWriteDto create)
         {
-            throw new NotImplementedException();
+            var map = create!=null? _mapper.Map<Patient>(create) : throw new ArgumentNullException(nameof(create));
+            _repository.AddNewCommandAsync(map);
         }
 
         public Task<IEnumerable<Patient>> GetAllCommandServices()
