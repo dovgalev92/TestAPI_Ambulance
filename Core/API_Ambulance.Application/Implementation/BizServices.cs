@@ -1,41 +1,24 @@
-﻿
-using APi_Ambulance.Domain.DTO.DTOPatient;
-using APi_Ambulance.Domain.Entity;
-using APi_Ambulance.Persistens.Repository.Interfaces;
+﻿using APi_Ambulance.Domain.DTO.DToCallAmbul;
 using API_Ambulance.Application.GenericInterfaces;
+using APi_Ambulance.Persistens.Repository.Interfaces.Repo;
 using AutoMapper;
+using APi_Ambulance.Domain.Entity;
 
 namespace API_Ambulance.Application.Implementation
 {
-    public class BizServices : IBizServices<PatientWriteDto, Patient>
+    public class BizServices : IBizServices<CreateCallAmbulDto>
     {
-        private readonly IRepository<Patient> _repository;
-        private IMapper _mapper;
-
-        public BizServices(IRepository<Patient> repository, IMapper mapper)
+        private readonly IMapper _mapper;
+        private readonly IRepository<CallingAmbulance> _repository;
+        public BizServices(IMapper mapper, IRepository<CallingAmbulance> repository)
         {
-            _repository = repository;
             _mapper = mapper;
+            _repository = repository;
         }
-        public void AddCommandServices(PatientWriteDto create)
+        public async Task InsertCommand(int id, CreateCallAmbulDto entity)
         {
-            var map = create!=null? _mapper.Map<Patient>(create) : throw new ArgumentNullException(nameof(create));
-            _repository.AddNewCommandAsync(map);
-        }
-
-        public Task<IEnumerable<Patient>> GetAllCommandServices()
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<Patient> GetCommandIdServices(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateCommandServices(PatientWriteDto update)
-        {
-            throw new NotImplementedException();
+            var map = _mapper.Map<CallingAmbulance>(entity);
+            await _repository.InsertCommandId(id, map);
         }
     }
 }

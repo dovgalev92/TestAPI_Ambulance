@@ -1,48 +1,26 @@
-﻿using APi_Ambulance.Persistens.Repository.Interfaces;
-using APi_Ambulance.Domain.Entity;
-using APi_Ambulance.Domain.DTO.DTOPatient;
-using Microsoft.EntityFrameworkCore;
+﻿using APi_Ambulance.Domain.Entity;
 using APi_Ambulance.Persistens.CodeEfCore;
-using APi_Ambulance.Domain.DTO.DToPatient;
+using APi_Ambulance.Persistens.Repository.Interfaces.Repo;
+using Microsoft.EntityFrameworkCore;
 
 namespace APi_Ambulance.Persistens.Repository.Implementations
 {
-    public class EmplementationRepository : IRepository<Patient>
+    public class EmplementationRepository : IRepository<CallingAmbulance>
     {
         private readonly EfCoreDbContext _context;
         public EmplementationRepository(EfCoreDbContext context)
         {
             _context = context;
         }
-
-        public void AddNewCommandAsync(Patient create)
+        public async Task InsertCommandId(int id, CallingAmbulance insert)
         {
-            if(create==null)
+            if (id == 0 && insert == null)
             {
-                throw new ArgumentNullException(nameof(create));
+                throw new ArgumentNullException(nameof(insert));
             }
-            _context.Entry(create).State = EntityState.Added;
-            _context.SaveChanges();
-        }
-
-        public async Task<IEnumerable<Patient>> GetAllCommandAsync()
-        {
-            return  await _context.Patients!.Include(c => c.CallingAmbulances)
-                .Include(a => a.AmbulanceDepartures)
-                .Include(l => l.Locality)
-                .ThenInclude(s => s.Streets)
-                .AsNoTracking()
-                .ToListAsync();
-        }
-
-        public Task<Patient> GetCommandIdAsync(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task UpdateCommandAsync(Patient update)
-        {
-            throw new NotImplementedException();
+            insert.Patient = await _context.Patients!.Where(x => x.PatientId == id).SingleOrDefaultAsync();
+            await _context.AddAsync(insert);
+            await _context.SaveChangesAsync();
         }
     }
 }

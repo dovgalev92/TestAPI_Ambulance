@@ -9,8 +9,8 @@ namespace APi_Ambulance.Controllers.ControllerPatient
     [Route("api/[controller]")]
     public class PatientController : ControllerBase
     {
-        private readonly IBizServices<PatientWriteDto, Patient> _bizServices;
-        public PatientController(IBizServices<PatientWriteDto, Patient> bizServices)
+        private readonly IBizServicesPatient<PatientWriteDto, Patient> _bizServices;
+        public PatientController(IBizServicesPatient<PatientWriteDto, Patient> bizServices)
         {
             _bizServices = bizServices;
         }
