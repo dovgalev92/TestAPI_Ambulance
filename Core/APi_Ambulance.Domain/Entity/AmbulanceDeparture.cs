@@ -38,7 +38,8 @@ namespace APi_Ambulance.Domain.Entity
         /// учреждения доставки 
         /// </summary>
         public string? NameHospital { get; set; }
-
+        public string? Priority { get; set; }
+        public string? ResultDepart { get; set; }
 
         // связи
         public Patient? Patient { get; set; }

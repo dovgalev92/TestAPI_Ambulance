@@ -45,6 +45,12 @@ namespace APi_Ambulance.Persistens.Migrations
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Priority")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ResultDepart")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("StartPatient")
                         .HasColumnType("datetime2");
 

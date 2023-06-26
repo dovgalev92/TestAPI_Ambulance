@@ -1,0 +1,12 @@
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\bin\Debug\net6.0\API_Ambulance.Application.deps.json
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\bin\Debug\net6.0\API_Ambulance.Application.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\bin\Debug\net6.0\API_Ambulance.Application.pdb
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\obj\Debug\net6.0\API_Ambulance.Application.csproj.AssemblyReference.cache
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\obj\Debug\net6.0\API_Ambulance.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\obj\Debug\net6.0\API_Ambulance.Application.AssemblyInfoInputs.cache
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\obj\Debug\net6.0\API_Ambulance.Application.AssemblyInfo.cs
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\obj\Debug\net6.0\API_Ambulance.Application.csproj.CoreCompileInputs.cache
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\obj\Debug\net6.0\API_Ambulance.Application.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\obj\Debug\net6.0\refint\API_Ambulance.Application.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\obj\Debug\net6.0\API_Ambulance.Application.pdb
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\API_Ambulance.Application\obj\Debug\net6.0\ref\API_Ambulance.Application.dll
