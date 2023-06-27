@@ -10,6 +10,7 @@ using API_Ambulance.Application.Automapper.Patients;
 using APi_Ambulance.Persistens.Repository.Interfaces.Repo;
 using APi_Ambulance.Domain.DTO.DToCallAmbul;
 using API_Ambulance.Application.Automapper.CallAmbulance;
+using APi_Ambulance.DIServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,10 +23,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(CreateMapPatient));
 builder.Services.AddAutoMapper(typeof(CallAmbulCreatMap));
 builder.Services.AddDbContext<EfCoreDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnect")));
-builder.Services.AddScoped<IRepositoryPatient<Patient>, EmplementationRepositoryPatient>();
-builder.Services.AddScoped<IBizServicesPatient<PatientWriteDto, Patient>, BizServicesPatient>();
-builder.Services.AddScoped<IRepository<CallingAmbulance>, EmplementationRepository>();
-builder.Services.AddScoped<IBizServices<CreateCallAmbulDto>, BizServices>();
+// DI services
+
+builder.Services.AddPatientServices();
+builder.Services.AddCallAmbulanceServices();
+
 
 var app = builder.Build();
 
