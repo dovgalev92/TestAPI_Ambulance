@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APi_Ambulance.Persistens.Migrations
 {
     [DbContext(typeof(EfCoreDbContext))]
-    [Migration("20230625210135_UpdateAmbulDep")]
-    partial class UpdateAmbulDep
+    [Migration("20230630143033_TypeDate")]
+    partial class TypeDate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -86,8 +86,8 @@ namespace APi_Ambulance.Persistens.Migrations
                     b.Property<string>("RedirectCall")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("TimeCall")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("TimeCall")
+                        .HasColumnType("time");
 
                     b.HasKey("CallingAmbulanceId");
 
@@ -125,7 +125,7 @@ namespace APi_Ambulance.Persistens.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("BirthYear")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Family_Name")
                         .HasColumnType("nvarchar(max)");

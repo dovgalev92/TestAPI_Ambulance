@@ -17,6 +17,7 @@ namespace APi_Ambulance.Persistens.ConfigurationEntity
                 .IsRequired();
             entity.Property(d => d.DateCall)
                 .HasColumnType("date");
+            
         }
     }
 }

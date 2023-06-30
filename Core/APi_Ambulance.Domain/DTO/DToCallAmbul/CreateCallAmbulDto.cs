@@ -19,8 +19,7 @@ namespace APi_Ambulance.Domain.DTO.DToCallAmbul
         /// <summary>
         /// время вызова
         /// </summary>
-        [DataType(DataType.Time)]
-        public DateTime TimeCall { get; set; }
+        public TimeSpan TimeCall { get; set; }
         /// <summary>
         /// причина вызова
         /// </summary>

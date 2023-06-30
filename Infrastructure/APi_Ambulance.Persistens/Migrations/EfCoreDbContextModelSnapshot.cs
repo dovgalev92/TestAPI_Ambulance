@@ -84,8 +84,8 @@ namespace APi_Ambulance.Persistens.Migrations
                     b.Property<string>("RedirectCall")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("TimeCall")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("TimeCall")
+                        .HasColumnType("time");
 
                     b.HasKey("CallingAmbulanceId");
 
@@ -123,7 +123,7 @@ namespace APi_Ambulance.Persistens.Migrations
                         .HasColumnType("int");
 
                     b.Property<DateTime>("BirthYear")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("date");
 
                     b.Property<string>("Family_Name")
                         .HasColumnType("nvarchar(max)");

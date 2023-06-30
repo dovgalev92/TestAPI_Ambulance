@@ -1,14 +1,7 @@
-using APi_Ambulance.Domain.DTO.DTOPatient;
-using APi_Ambulance.Domain.Entity;
+using System.Text.Json.Serialization;
 using APi_Ambulance.Persistens.CodeEfCore;
-using APi_Ambulance.Persistens.Repository.Implementations;
-using API_Ambulance.Application.GenericInterfaces;
-using API_Ambulance.Application.Implementation;
 using Microsoft.EntityFrameworkCore;
-using APi_Ambulance.Persistens.Repository.Interfaces.Patient;
 using API_Ambulance.Application.Automapper.Patients;
-using APi_Ambulance.Persistens.Repository.Interfaces.Repo;
-using APi_Ambulance.Domain.DTO.DToCallAmbul;
 using API_Ambulance.Application.Automapper.CallAmbulance;
 using APi_Ambulance.DIServices;
 

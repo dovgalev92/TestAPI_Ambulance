@@ -86,6 +86,8 @@ namespace APi_Ambulance.Persistens.Migrations
                     StartPatient = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndTimePatient = table.Column<DateTime>(type: "datetime2", nullable: false),
                     NameHospital = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Priority = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ResultDepart = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PatientId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -106,7 +108,7 @@ namespace APi_Ambulance.Persistens.Migrations
                     CallingAmbulanceId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DateCall = table.Column<DateTime>(type: "date", nullable: false),
-                    TimeCall = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    TimeCall = table.Column<TimeSpan>(type: "time", nullable: false),
                     CauseCall = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RedirectCall = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PatientId = table.Column<int>(type: "int", nullable: false)

@@ -14,6 +14,8 @@ namespace APi_Ambulance.Persistens.ConfigurationEntity
                 .WithOne(c => c.Patient)
                 .HasForeignKey(fk => fk.PatientId)
                 .IsRequired();
+            builder.Property(d => d.BirthYear)
+                .HasColumnType("date");
         }
     }
 }

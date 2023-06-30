@@ -1,4 +1,5 @@
-﻿using APi_Ambulance.Domain.Entity;
+﻿using APi_Ambulance.Domain.DTO.DToCallAmbul;
+using APi_Ambulance.Domain.Entity;
 using AutoMapper;
 
 
@@ -8,7 +9,7 @@ namespace API_Ambulance.Application.Automapper.CallAmbulance
     {
         public CallAmbulCreatMap()
         {
-            CreateMap<CallAmbulCreatMap, CallingAmbulance>();
+            CreateMap<CreateCallAmbulDto, CallingAmbulance>();
         }
     }
 }
