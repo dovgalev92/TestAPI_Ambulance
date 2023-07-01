@@ -16,7 +16,7 @@ namespace APi_Ambulance.Controllers.ControllerPatient
         }
         // api/Patinet
         [HttpPost]
-        public IActionResult AddCommand([FromBody] PatientWriteDto dto)
+        public IActionResult AddCommandPatientAsync([FromBody] PatientWriteDto dto)
         {
             _bizServices.AddCommandServices(dto);
             return Ok("Данные успешно добавлены");

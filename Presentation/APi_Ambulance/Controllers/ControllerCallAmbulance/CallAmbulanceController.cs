@@ -16,7 +16,7 @@ namespace APi_Ambulance.Controllers.ControllerCallAmbulance
 
         // api/CallAmbulance/5
         [HttpPost("{id}")]
-        public async Task<IActionResult> AddCommand(int id, [FromBody] CreateCallAmbulDto dto)
+        public async Task<IActionResult> AddCommandCallAsync(int id, [FromBody] CreateCallAmbulDto dto)
         {
             await _bizServices.InsertCommand(id, dto);
             return Ok("Операция проведена успешно");

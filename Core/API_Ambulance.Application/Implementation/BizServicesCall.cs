@@ -6,11 +6,11 @@ using APi_Ambulance.Domain.Entity;
 
 namespace API_Ambulance.Application.Implementation
 {
-    public class BizServices : IBizServices<CreateCallAmbulDto>
+    public class BizServicesCall : IBizServices<CreateCallAmbulDto>
     {
         private readonly IMapper _mapper;
         private readonly IRepository<CallingAmbulance> _repository;
-        public BizServices(IMapper mapper, IRepository<CallingAmbulance> repository)
+        public BizServicesCall(IMapper mapper, IRepository<CallingAmbulance> repository)
         {
             _mapper = mapper;
             _repository = repository;

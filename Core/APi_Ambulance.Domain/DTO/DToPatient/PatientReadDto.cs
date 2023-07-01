@@ -27,13 +27,15 @@ namespace APi_Ambulance.Domain.DTO.DToPatient
         /// год рождения
         /// </summary>
         public DateTime BirthYear { get; set; }
+        /// <summary>
+        /// дата вызова
+        /// </summary>
         [DataType(DataType.Date)]
         public DateTime DateCall { get; set; }
         /// <summary>
         /// время вызова
         /// </summary>
-        [DataType(DataType.Time)]
-        public DateTime TimeCall { get; set; }
+        public TimeSpan TimeCall { get; set; }
         /// <summary>
         /// причина вызова
         /// </summary>
@@ -51,18 +53,15 @@ namespace APi_Ambulance.Domain.DTO.DToPatient
         /// <summary>
         /// время выезда скорой
         /// </summary>
-        [DataType(DataType.Time)]
-        public DateTime TimeDepart { get; set; }
+        public TimeSpan TimeDepart { get; set; }
         /// <summary>
         /// время прибытия к пациенту
         /// </summary>
-        [DataType(DataType.Time)]
-        public DateTime StartPatient { get; set; }
+        public TimeSpan StartPatient { get; set; }
         /// <summary>
         /// время убытия 
         /// </summary>
-        [DataType(DataType.Time)]
-        public DateTime EndTimePatient { get; set; }
+        public TimeSpan EndTimePatient { get; set; }
         /// <summary>
         /// учреждения доставки 
         /// </summary>

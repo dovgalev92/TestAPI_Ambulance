@@ -1,15 +1,15 @@
-﻿using APi_Ambulance.Domain.Enum;
+﻿using APi_Ambulance.Domain.Entity;
+using APi_Ambulance.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APi_Ambulance.Domain.Entity
+namespace APi_Ambulance.Domain.DTO.DtoCallDepartrure
 {
-    public class AmbulanceDeparture
+    public class AmbulanceDepartureDto
     {
         public int AmbulanceDepartureId { get; set; }
         /// <summary>
@@ -37,12 +37,11 @@ namespace APi_Ambulance.Domain.Entity
         /// учреждения доставки 
         /// </summary>
         public string? NameHospital { get; set; }
-        public string? Priority { get; set; }
+        public  string? Priority { get; set; }
         public string? ResultDepart { get; set; }
-        
 
         // связи
         public Patient? Patient { get; set; }
-        public int PatientId { get; set; }
+        
     }
 }
