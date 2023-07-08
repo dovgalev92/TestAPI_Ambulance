@@ -2510,6 +2510,7 @@
       "API_Ambulance.Application >= 1.0.0",
       "APi_Ambulance.Persistens >= 1.0.0",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.19",
+      "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.19",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.19",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -2562,6 +2563,10 @@
         "targetAlias": "net6.0",
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[6.0.19, )"
+          },
+          "Microsoft.EntityFrameworkCore.SqlServer": {
             "target": "Package",
             "version": "[6.0.19, )"
           },

@@ -12,6 +12,10 @@ namespace APi_Ambulance.Domain.DTO.DToCallAmbul
     {
         public int CallingAmbulanceId { get; set; }
         /// <summary>
+        /// кто вызывает скорую(сам пациент или другой человек)
+        /// </summary>
+        public string Name { get; set; }
+        /// <summary>
         /// дата вызова
         /// </summary>
         [DataType(DataType.Date)]

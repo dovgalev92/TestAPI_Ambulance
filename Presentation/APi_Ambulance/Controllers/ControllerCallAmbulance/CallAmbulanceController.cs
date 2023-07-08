@@ -18,6 +18,10 @@ namespace APi_Ambulance.Controllers.ControllerCallAmbulance
         [HttpPost("{id}")]
         public async Task<IActionResult> AddCommandCallAsync(int id, [FromBody] CreateCallAmbulDto dto)
         {
+            if (!ModelState.IsValid)
+            {
+                return Ok("не корректные данные");
+            }
             await _bizServices.InsertCommand(id, dto);
             return Ok("Операция проведена успешно");
         }

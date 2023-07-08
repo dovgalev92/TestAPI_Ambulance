@@ -4,7 +4,6 @@ using APi_Ambulance.Persistens.Repository.Implementations;
 using APi_Ambulance.Persistens.Repository.Interfaces.Repo;
 using API_Ambulance.Application.GenericInterfaces;
 using API_Ambulance.Application.Implementation;
-using System.Runtime.CompilerServices;
 
 namespace APi_Ambulance.DIServices
 {
@@ -13,8 +12,8 @@ namespace APi_Ambulance.DIServices
         public static IServiceCollection AddDepartureService(
             this IServiceCollection services)
         {
-            services.AddScoped<IRepository<AmbulanceDeparture>, EmplementationDepart>();
-            services.AddScoped<IBizServices<AmbulanceDepartureDto>, BizServiceDepart>();
+            services.AddScoped<IRepository<AmbulanceDeparture>,EmplementationDeparture>();
+            services.AddScoped<IBizServices<AmbulanceDepartureDto>, BizServicesDepart>();
             
             return services;
         }

@@ -1,7 +1,7 @@
 ﻿using APi_Ambulance.Domain.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System.Threading.Tasks;
+
 
 namespace APi_Ambulance.Persistens.ConfigurationEntity
 {

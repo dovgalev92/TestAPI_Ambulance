@@ -33,7 +33,7 @@ namespace APi_Ambulance.Domain.Entity
 
         // связи
         public ICollection<CallingAmbulance>? CallingAmbulances { get; set; }
-        public ICollection<AmbulanceDeparture>? AmbulanceDepartures { get; set; }
+        public ICollection<AmbulanceDeparture>? Departures { get; set; }
         public Street? Street { get; set; }
         public int? StreetId { get; set; }
         public Locality? Locality { get; set; }

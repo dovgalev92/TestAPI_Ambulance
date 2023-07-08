@@ -9,13 +9,22 @@ namespace APi_Ambulance.Persistens.ConfigurationEntity
         public void Configure(EntityTypeBuilder<Patient> builder)
         {
             builder.HasKey(pk => pk.PatientId);
-            builder
-                .HasMany(c => c.CallingAmbulances)
-                .WithOne(c => c.Patient)
-                .HasForeignKey(fk => fk.PatientId)
-                .IsRequired();
             builder.Property(d => d.BirthYear)
                 .HasColumnType("date");
+            builder
+                .HasOne(s => s.Street)
+                .WithMany(p => p.Patients)
+                .HasForeignKey(p => p.StreetId);
+            builder
+                .HasOne(l => l.Locality)
+                .WithMany(p => p.Patients)
+                .HasForeignKey(fk => fk.LocalityId);
+            builder
+                .HasMany(c => c.CallingAmbulances)
+                .WithOne(p => p.Patient)
+                .HasForeignKey(fk => fk.PatientId)
+                .IsRequired();
+                
         }
     }
 }

@@ -8,12 +8,12 @@ namespace APi_Ambulance.Persistens.ConfigurationEntity
         public void Configure(EntityTypeBuilder<AmbulanceDeparture> entity)
         {
             entity.HasKey(pk => pk.AmbulanceDepartureId);
-            entity
-                .HasOne(p => p.Patient)
-                .WithMany(a => a.AmbulanceDepartures)
-                .HasForeignKey(fk => fk.PatientId)
-                .IsRequired();
             entity.Property(d => d.DateDepart).HasColumnType("date");
+            entity.HasOne(c => c.Calling)
+                .WithOne(d => d.Departure)
+                .HasForeignKey<AmbulanceDeparture>(fk => fk.CallingAmbulanceId)
+                .OnDelete(DeleteBehavior.Cascade)
+                .IsRequired();                   
         }
     }
 }

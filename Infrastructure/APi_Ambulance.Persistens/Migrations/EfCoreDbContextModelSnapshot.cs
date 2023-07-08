@@ -30,6 +30,9 @@ namespace APi_Ambulance.Persistens.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AmbulanceDepartureId"), 1L, 1);
 
+                    b.Property<int>("CallingAmbulanceId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("DateDepart")
                         .HasColumnType("date");
 
@@ -37,18 +40,21 @@ namespace APi_Ambulance.Persistens.Migrations
                         .HasColumnType("time");
 
                     b.Property<string>("NameHospital")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("NumberAccident_AssistantSquad")
                         .HasColumnType("int");
 
-                    b.Property<int>("PatientId")
+                    b.Property<int?>("PatientId")
                         .HasColumnType("int");
 
                     b.Property<string>("Priority")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ResultDepart")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<TimeSpan>("StartPatient")
@@ -58,6 +64,9 @@ namespace APi_Ambulance.Persistens.Migrations
                         .HasColumnType("time");
 
                     b.HasKey("AmbulanceDepartureId");
+
+                    b.HasIndex("CallingAmbulanceId")
+                        .IsUnique();
 
                     b.HasIndex("PatientId");
 
@@ -73,10 +82,15 @@ namespace APi_Ambulance.Persistens.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CallingAmbulanceId"), 1L, 1);
 
                     b.Property<string>("CauseCall")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateCall")
                         .HasColumnType("date");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
@@ -185,13 +199,17 @@ namespace APi_Ambulance.Persistens.Migrations
 
             modelBuilder.Entity("APi_Ambulance.Domain.Entity.AmbulanceDeparture", b =>
                 {
-                    b.HasOne("APi_Ambulance.Domain.Entity.Patient", "Patient")
-                        .WithMany("AmbulanceDepartures")
-                        .HasForeignKey("PatientId")
+                    b.HasOne("APi_Ambulance.Domain.Entity.CallingAmbulance", "Calling")
+                        .WithOne("Departure")
+                        .HasForeignKey("APi_Ambulance.Domain.Entity.AmbulanceDeparture", "CallingAmbulanceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Patient");
+                    b.HasOne("APi_Ambulance.Domain.Entity.Patient", null)
+                        .WithMany("Departures")
+                        .HasForeignKey("PatientId");
+
+                    b.Navigation("Calling");
                 });
 
             modelBuilder.Entity("APi_Ambulance.Domain.Entity.CallingAmbulance", b =>
@@ -231,6 +249,12 @@ namespace APi_Ambulance.Persistens.Migrations
                     b.Navigation("Locality");
                 });
 
+            modelBuilder.Entity("APi_Ambulance.Domain.Entity.CallingAmbulance", b =>
+                {
+                    b.Navigation("Departure")
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("APi_Ambulance.Domain.Entity.Locality", b =>
                 {
                     b.Navigation("Patients");
@@ -240,9 +264,9 @@ namespace APi_Ambulance.Persistens.Migrations
 
             modelBuilder.Entity("APi_Ambulance.Domain.Entity.Patient", b =>
                 {
-                    b.Navigation("AmbulanceDepartures");
-
                     b.Navigation("CallingAmbulances");
+
+                    b.Navigation("Departures");
                 });
 
             modelBuilder.Entity("APi_Ambulance.Domain.Entity.Street", b =>

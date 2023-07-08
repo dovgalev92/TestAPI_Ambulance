@@ -26,7 +26,6 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
         public async Task<IEnumerable<Patient>> GetAllCommandAsync()
         {
             return  await _context.Patients!.Include(c => c.CallingAmbulances)
-                .Include(a => a.AmbulanceDepartures)
                 .Include(l => l.Locality)
                 .ThenInclude(s => s.Streets)
                 .AsNoTracking()
