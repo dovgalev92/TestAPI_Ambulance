@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace APi_Ambulance.Persistens.Migrations
 {
-    public partial class Init : Migration
+    public partial class InitDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -112,8 +112,8 @@ namespace APi_Ambulance.Persistens.Migrations
                     NameHospital = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Priority = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ResultDepart = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CallingAmbulanceId = table.Column<int>(type: "int", nullable: false),
-                    PatientId = table.Column<int>(type: "int", nullable: true)
+                    PatientId = table.Column<int>(type: "int", nullable: false),
+                    CallingAmbulanceId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

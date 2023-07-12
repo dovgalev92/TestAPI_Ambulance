@@ -25,16 +25,21 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
 
         public async Task<IEnumerable<Patient>> GetAllCommandAsync()
         {
-            return  await _context.Patients!.Include(c => c.CallingAmbulances)
+            return  await Task.Run(() => _context.Patients!.Include(c => c.CallingAmbulances)
+                .Include(dep => dep.Departures)
                 .Include(l => l.Locality)
-                .ThenInclude(s => s.Streets)
+                .ThenInclude(s => s!.Streets)
                 .AsNoTracking()
-                .ToListAsync();
+                .ToListAsync());
         }
 
-        public Task<Patient> GetCommandIdAsync(int id)
+        public async Task<Patient> GetCommandIdAsync(int id)
         {
-            throw new NotImplementedException();
+            if(id == 0)
+            {
+                throw new ArgumentNullException(nameof(id));
+            }
+            return await Task.Run(() => _context.Patients!.Where(p => p.PatientId == id).SingleOrDefaultAsync());
         }
 
         public Task UpdateCommandAsync(Patient update)

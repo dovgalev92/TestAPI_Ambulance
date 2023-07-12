@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APi_Ambulance.Persistens.Migrations
 {
     [DbContext(typeof(EfCoreDbContext))]
-    [Migration("20230708202301_Init")]
-    partial class Init
+    [Migration("20230711213624_UpdateEntityCallAmbulance")]
+    partial class UpdateEntityCallAmbulance
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,7 +48,7 @@ namespace APi_Ambulance.Persistens.Migrations
                     b.Property<int>("NumberAccident_AssistantSquad")
                         .HasColumnType("int");
 
-                    b.Property<int?>("PatientId")
+                    b.Property<int>("PatientId")
                         .HasColumnType("int");
 
                     b.Property<string>("Priority")
@@ -90,7 +90,7 @@ namespace APi_Ambulance.Persistens.Migrations
                     b.Property<DateTime>("DateCall")
                         .HasColumnType("date");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("NameOfCAllAmbulance")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -207,11 +207,15 @@ namespace APi_Ambulance.Persistens.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("APi_Ambulance.Domain.Entity.Patient", null)
+                    b.HasOne("APi_Ambulance.Domain.Entity.Patient", "Patient")
                         .WithMany("Departures")
-                        .HasForeignKey("PatientId");
+                        .HasForeignKey("PatientId")
+                        .OnDelete(DeleteBehavior.ClientCascade)
+                        .IsRequired();
 
                     b.Navigation("Calling");
+
+                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("APi_Ambulance.Domain.Entity.CallingAmbulance", b =>

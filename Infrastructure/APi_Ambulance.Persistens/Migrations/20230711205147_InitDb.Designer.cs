@@ -4,6 +4,7 @@ using APi_Ambulance.Persistens.CodeEfCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APi_Ambulance.Persistens.Migrations
 {
     [DbContext(typeof(EfCoreDbContext))]
-    partial class EfCoreDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230711205147_InitDb")]
+    partial class InitDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -88,7 +90,7 @@ namespace APi_Ambulance.Persistens.Migrations
                     b.Property<DateTime>("DateCall")
                         .HasColumnType("date");
 
-                    b.Property<string>("NameOfCAllAmbulance")
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
