@@ -40,6 +40,7 @@ namespace APi_Ambulance.Domain.Entity
         // связи
         public CallingAmbulance Calling { get; set; }
         public Patient Patient { get; set; }
+        public int PatientId { get; set; }
         public int CallingAmbulanceId { get; set; }
     }
 }

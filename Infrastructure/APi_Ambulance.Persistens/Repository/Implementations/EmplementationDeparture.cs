@@ -1,6 +1,6 @@
 ﻿using APi_Ambulance.Domain.Entity;
 using APi_Ambulance.Persistens.CodeEfCore;
-using APi_Ambulance.Persistens.Repository.Interfaces.Repo;
+using APi_Ambulance.Persistens.Repository.Interfaces.GenericRepository;
 using Microsoft.EntityFrameworkCore;
 using System.Net.Http.Headers;
 

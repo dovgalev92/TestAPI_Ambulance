@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace APi_Ambulance.Domain.DTO.DtoCallDepartrure
 {
-    public class AmbulanceDepartureDto
+    public class CreateAmbulanceDepartureDto
     {
         public int AmbulanceDepartureId { get; set; }
         /// <summary>

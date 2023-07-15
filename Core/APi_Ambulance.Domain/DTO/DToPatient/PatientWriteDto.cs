@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 
-namespace APi_Ambulance.Domain.DTO.DTOPatient
+namespace APi_Ambulance.Domain.DTO.DToPatient
 {
     public class PatientWriteDto
     {
@@ -12,15 +8,15 @@ namespace APi_Ambulance.Domain.DTO.DTOPatient
         /// <summary>
         /// имя пациента
         /// </summary>
-        public string? Name { get; set; }
+        public string Name { get; set; }
         /// <summary>
         /// фамиля пациента
         /// </summary>
-        public string? Family_Name { get; set; }
+        public string Family_Name { get; set; }
         /// <summary>
         /// отчество пациента
         /// </summary>
-        public string? Patronymic { get; set; }
+        public string Patronymic { get; set; }
         /// <summary>
         /// возраст(полных лет)
         /// </summary>

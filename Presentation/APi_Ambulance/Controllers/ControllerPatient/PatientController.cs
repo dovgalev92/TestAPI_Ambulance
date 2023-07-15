@@ -1,5 +1,7 @@
-﻿using APi_Ambulance.Domain.DTO.DTOPatient;
+﻿using APi_Ambulance.Domain.DTO.DToPatient;
+
 using APi_Ambulance.Domain.Entity;
+using API_Ambulance.Application.Automapper.Patients;
 using API_Ambulance.Application.GenericInterfaces;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,8 +11,8 @@ namespace APi_Ambulance.Controllers.ControllerPatient
     [Route("api/[controller]")]
     public class PatientController : ControllerBase
     {
-        private readonly IBizServicesPatient<PatientWriteDto, Patient> _bizServices;
-        public PatientController(IBizServicesPatient<PatientWriteDto, Patient> bizServices)
+        private readonly IBizServicesPatient<PatientWriteDto, PatientReadDto> _bizServices;
+        public PatientController(IBizServicesPatient<PatientWriteDto, PatientReadDto> bizServices)
         {
             _bizServices = bizServices;
         }
@@ -20,6 +22,11 @@ namespace APi_Ambulance.Controllers.ControllerPatient
         {
             _bizServices.AddCommandServices(dto);
             return Ok("Данные успешно добавлены");
+        }
+        [HttpGet("{id}")]
+        public async Task<PatientReadDto> ReadCommandPatientAsync(int id)
+        {
+            return await _bizServices.GetCommandIdServices(id);
         }
 
         

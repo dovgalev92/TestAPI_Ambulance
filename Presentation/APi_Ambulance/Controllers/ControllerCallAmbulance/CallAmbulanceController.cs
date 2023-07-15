@@ -9,9 +9,11 @@ namespace APi_Ambulance.Controllers.ControllerCallAmbulance
     public class CallAmbulanceController : ControllerBase
     {
         private readonly IBizServices<CreateCallAmbulDto> _bizServices;
-        public CallAmbulanceController(IBizServices<CreateCallAmbulDto> bizServices)
+        private readonly IBizServiceReadCallAmbulance _bizServiceReadCall;
+        public CallAmbulanceController(IBizServices<CreateCallAmbulDto> bizServices, IBizServiceReadCallAmbulance bizServiceReadCall)
         {
             _bizServices = bizServices;
+            _bizServiceReadCall = bizServiceReadCall;
         }
 
         // api/CallAmbulance/5
@@ -24,6 +26,16 @@ namespace APi_Ambulance.Controllers.ControllerCallAmbulance
             }
             await _bizServices.InsertCommand(id, dto);
             return Ok("Операция проведена успешно");
+        }
+        [HttpGet("{id}")]
+        public async Task<ReadCallAmbualnceDto> ReadCommandCallAmbualnce(int id)
+        {
+            if(!ModelState.IsValid)
+            {
+                throw new ArgumentNullException(nameof(id));
+            }
+           return await _bizServiceReadCall.ReadCommandAsync(id);
+
         }
     }
 }

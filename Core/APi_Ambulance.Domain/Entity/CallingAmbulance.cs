@@ -8,7 +8,7 @@ namespace APi_Ambulance.Domain.Entity
         /// <summary>
         /// имя, фамилия кто сделал вызов(пациент или сторонний человек)
         /// </summary>
-        public string Name { get; set; }
+        public string NameOfCAllAmbulance { get; set; }
         /// <summary>
         /// дата вызова
         /// </summary>

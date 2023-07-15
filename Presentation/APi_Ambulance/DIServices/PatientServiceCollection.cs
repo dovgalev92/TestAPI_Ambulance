@@ -1,10 +1,9 @@
-﻿using APi_Ambulance.Domain.DTO.DTOPatient;
+﻿using APi_Ambulance.Domain.DTO.DToPatient;
 using APi_Ambulance.Domain.Entity;
 using APi_Ambulance.Persistens.Repository.Implementations;
 using APi_Ambulance.Persistens.Repository.Interfaces.Patient;
 using API_Ambulance.Application.GenericInterfaces;
 using API_Ambulance.Application.Implementation;
-using System.Runtime.CompilerServices;
 
 namespace APi_Ambulance.DIServices
 {
@@ -14,7 +13,7 @@ namespace APi_Ambulance.DIServices
             this IServiceCollection services)
         {
             services.AddScoped<IRepositoryPatient<Patient>, EmplementationRepositoryPatient>();
-            services.AddScoped<IBizServicesPatient<PatientWriteDto, Patient>, BizServicesPatient>();
+            services.AddScoped<IBizServicesPatient<PatientWriteDto, PatientReadDto>, BizServicesPatient>();
 
             return services;
         }

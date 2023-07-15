@@ -1,5 +1,5 @@
 ﻿
-using APi_Ambulance.Domain.DTO.DTOPatient;
+using APi_Ambulance.Domain.DTO.DToPatient;
 using APi_Ambulance.Domain.Entity;
 using APi_Ambulance.Persistens.Repository.Interfaces.Patient;
 using API_Ambulance.Application.GenericInterfaces;
@@ -7,7 +7,7 @@ using AutoMapper;
 
 namespace API_Ambulance.Application.Implementation
 {
-    public class BizServicesPatient : IBizServicesPatient<PatientWriteDto, Patient>
+    public class BizServicesPatient : IBizServicesPatient<PatientWriteDto, PatientReadDto>
     {
         private readonly IRepositoryPatient<Patient> _repository;
         private IMapper _mapper;
@@ -23,17 +23,18 @@ namespace API_Ambulance.Application.Implementation
             _repository.AddNewCommandAsync(map);
         }
 
-        public Task<IEnumerable<Patient>> GetAllCommandServices()
+        public async Task<PatientReadDto> GetCommandIdServices(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<Patient> GetCommandIdServices(int id)
-        {
-            throw new NotImplementedException();
+            var readMapPatientId = await _repository.GetCommandIdAsync(id);
+            return _mapper.Map<PatientReadDto>(readMapPatientId);
         }
 
         public Task UpdateCommandServices(PatientWriteDto update)
+        {
+            throw new NotImplementedException();
+        }
+
+        Task<IEnumerable<PatientReadDto>> IBizServicesPatient<PatientWriteDto, PatientReadDto>.GetAllCommandServices()
         {
             throw new NotImplementedException();
         }

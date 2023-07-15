@@ -8,13 +8,13 @@ namespace APi_Ambulance.Controllers.DepartController
     [Route("api/[controller]")]
     public class DepartureController : ControllerBase
     {
-        private readonly IBizServices<AmbulanceDepartureDto> _services;
-        public DepartureController(IBizServices<AmbulanceDepartureDto> services)
+        private readonly IBizServices<CreateAmbulanceDepartureDto> _services;
+        public DepartureController(IBizServices<CreateAmbulanceDepartureDto> services)
         {
             _services = services;
         }
         [HttpPost("{id}")]
-        public async Task<IActionResult> AddCommandDepartAsync(int id, [FromBody] AmbulanceDepartureDto departure)
+        public async Task<IActionResult> AddCommandDepartAsync(int id, [FromBody] CreateAmbulanceDepartureDto departure)
         {
             await _services.InsertCommand(id, departure);
             return Ok("Вызов добавлен");

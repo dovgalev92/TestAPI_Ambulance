@@ -17,6 +17,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAutoMapper(typeof(CreateMapPatient));
 builder.Services.AddAutoMapper(typeof(CallAmbulCreatMap));
 builder.Services.AddAutoMapper(typeof(CreateDepartureDto));
+builder.Services.AddAutoMapper(typeof(ReadMapPatientId));
+builder.Services.AddAutoMapper(typeof(CallAmbulanceReadMap));
 builder.Services.AddDbContext<EfCoreDbContext>(opt => opt.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnect")));
 // DI services
 

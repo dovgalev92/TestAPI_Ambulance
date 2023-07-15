@@ -1,4 +1,4 @@
-﻿using APi_Ambulance.Domain.DTO.DTOPatient;
+﻿using APi_Ambulance.Domain.DTO.DToPatient;
 using APi_Ambulance.Domain.Entity;
 using AutoMapper;
 

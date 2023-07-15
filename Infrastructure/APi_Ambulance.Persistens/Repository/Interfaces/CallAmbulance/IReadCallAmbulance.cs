@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace APi_Ambulance.Persistens.Repository.Interfaces.Repo
+namespace APi_Ambulance.Persistens.Repository.Interfaces.CallAmbulance
 {
-    public interface IRepository<T>
+    public interface IReadCallAmbulance
     {
-        Task InsertCommandId(int id, T insert);
+        Task<CallingAmbulance> ReadCommand(int id);
     }
 }

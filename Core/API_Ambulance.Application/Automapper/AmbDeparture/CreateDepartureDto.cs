@@ -9,7 +9,7 @@ namespace API_Ambulance.Application.Automapper.AmbDeparture
     {
         public CreateDepartureDto()
         {
-            CreateMap<AmbulanceDepartureDto, AmbulanceDeparture>();
+            CreateMap<CreateAmbulanceDepartureDto, AmbulanceDeparture>();
         }
     }
 }

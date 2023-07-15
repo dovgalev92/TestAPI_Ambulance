@@ -6,6 +6,5 @@
         Task<IEnumerable<T>> GetAllCommandAsync();
         Task<T> GetCommandIdAsync(int id);
         Task UpdateCommandAsync(T update);
-
     }
 }
