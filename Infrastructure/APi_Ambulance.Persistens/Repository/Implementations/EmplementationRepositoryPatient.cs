@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using APi_Ambulance.Persistens.CodeEfCore;
 using APi_Ambulance.Persistens.Repository.Interfaces.Patient;
+using StatusGeneric;
 
 namespace APi_Ambulance.Persistens.Repository.Implementations
 {
@@ -26,6 +27,8 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
         public async Task<IEnumerable<Patient>> GetAllCommandAsync()
         {
             return  await Task.Run(() => _context.Patients!
+                .Include(l => l.Locality)
+                .Include(s => s.Street)
                 .AsNoTracking()
                 .ToListAsync());
         }
@@ -36,12 +39,25 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
             {
                 throw new ArgumentNullException(nameof(id));
             }
-            return await Task.Run(()=> _context.Patients!.Where(p => p.PatientId == id).SingleOrDefaultAsync());
+            return await Task.Run(()=> _context.Patients!
+            .Where(p => p.PatientId == id)
+            .AsNoTracking()
+            .SingleOrDefaultAsync());
         }
 
-        public Task UpdateCommandAsync(Patient update)
+        public  IStatusGeneric UpdateCommand(Patient update)
         {
-            throw new NotImplementedException();
+            var status = new StatusGenericHandler();
+            if(update == null)
+            {
+                status.AddError("параметр метода UpdateCommand имеет значение null", nameof(update));
+            }
+            if(!status.IsValid)
+            return status;
+
+            _context.Entry(update).State = EntityState.Modified;
+            _context.SaveChanges();
+            return status;
         }
     }
 }

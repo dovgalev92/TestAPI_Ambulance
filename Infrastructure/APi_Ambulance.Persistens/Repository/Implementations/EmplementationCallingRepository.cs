@@ -20,6 +20,10 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
                 throw new ArgumentNullException(nameof(insert));
             }
             insert.Patient = await _context.Patients!.Where(x => x.PatientId == id).SingleOrDefaultAsync();
+            if (insert.Patient == null)
+            {
+                throw new ArgumentNullException(nameof(insert.Patient));
+            }
             await _context.AddAsync(insert);
             await _context.SaveChangesAsync();
         }
@@ -30,11 +34,12 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
                 throw new ArgumentNullException(nameof(id));
             }
 
-            return  await _context.CallingAmbulances!.Where(x => x.CallingAmbulanceId == id)
+            return  await Task.Run(() => _context.CallingAmbulances!
+            .Where(x => x.CallingAmbulanceId == id)
                 .Include(p => p.Patient)
                 .Include(d => d.Departure)
                 .AsNoTracking()
-                .FirstOrDefaultAsync();
+                .FirstOrDefaultAsync());
 
         }
     }
