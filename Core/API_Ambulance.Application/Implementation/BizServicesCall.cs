@@ -28,7 +28,6 @@ namespace API_Ambulance.Application.Implementation
         {
             var callAmbul = await _readCallAmbulance.ReadCommand(id);
             return _mapper.Map<ReadCallAmbualnceDto>(callAmbul);
-
         }
     }
 }

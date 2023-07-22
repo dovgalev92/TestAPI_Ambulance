@@ -40,6 +40,43 @@
           }
         }
       },
+      "EfCore.GenericServices/5.2.1": {
+        "dependencies": {
+          "AutoMapper": "12.0.1",
+          "GenericServices.StatusGeneric": "1.2.0",
+          "Microsoft.AspNetCore.JsonPatch": "6.0.11",
+          "Microsoft.EntityFrameworkCore": "6.0.19"
+        },
+        "runtime": {
+          "lib/net6.0/GenericServices.dll": {
+            "assemblyVersion": "5.2.1.0",
+            "fileVersion": "5.2.1.0"
+          }
+        }
+      },
+      "GenericServices.StatusGeneric/1.2.0": {
+        "dependencies": {
+          "System.ComponentModel.Annotations": "4.6.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/StatusGeneric.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.JsonPatch/6.0.11": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.JsonPatch.dll": {
+            "assemblyVersion": "6.0.11.0",
+            "fileVersion": "6.0.1122.52304"
+          }
+        }
+      },
       "Microsoft.CSharp/4.7.0": {},
       "Microsoft.Data.SqlClient/2.1.4": {
         "dependencies": {
@@ -342,11 +379,20 @@
           }
         }
       },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
       "System.Collections.Immutable/6.0.0": {
         "dependencies": {
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         }
       },
+      "System.ComponentModel.Annotations/4.6.0": {},
       "System.Configuration.ConfigurationManager/4.7.0": {
         "dependencies": {
           "System.Security.Cryptography.ProtectedData": "4.7.0",
@@ -496,6 +542,7 @@
       "APi_Ambulance.Persistens/1.0.0": {
         "dependencies": {
           "APi_Ambulance.Domain": "1.0.0",
+          "EfCore.GenericServices": "5.2.1",
           "Microsoft.EntityFrameworkCore": "6.0.19",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.19"
         },
@@ -524,6 +571,27 @@
       "sha512": "sha512-+g/K+Vpe3gGMKGzjslMOdqNlkikScDjWfVvmWTayrDHaG/n2pPmFBMa+jKX1r/h6BDGFdkyRjAuhFE3ykW+r1g==",
       "path": "automapper.extensions.microsoft.dependencyinjection/12.0.1",
       "hashPath": "automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512"
+    },
+    "EfCore.GenericServices/5.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q6l4kIssGSV2MX2bC0RPAY6jMi92RSzOiNrYbHTtpsvXl6ffHsVlCqOo1Ffmg6qEQAc/dcJS/t1mVJt22hdQLA==",
+      "path": "efcore.genericservices/5.2.1",
+      "hashPath": "efcore.genericservices.5.2.1.nupkg.sha512"
+    },
+    "GenericServices.StatusGeneric/1.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Nt9OMQUwi+Wz0zdWSFFbBcosotoi55mUBAa8Ho47kZznPZqBEW/RRR6BXje4B1hbb7EgyfUGND60jiP82EU76A==",
+      "path": "genericservices.statusgeneric/1.2.0",
+      "hashPath": "genericservices.statusgeneric.1.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.JsonPatch/6.0.11": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xrgl+xfCAHGPTEtex/fF/t9jbr4ckBAwB5txVrO+Osn9SdrbypUem2ES946PCAEPWOgcLiAlH/pnsCw7Nv1NAw==",
+      "path": "microsoft.aspnetcore.jsonpatch/6.0.11",
+      "hashPath": "microsoft.aspnetcore.jsonpatch.6.0.11.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",
@@ -707,12 +775,26 @@
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
     },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
     "System.Collections.Immutable/6.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-l4zZJ1WU2hqpQQHXz1rvC3etVZN+2DLmQMO79FhOTZHMn8tDRr+WU287sbomD0BETlmKDn0ygUgVy9k5xkkJdA==",
       "path": "system.collections.immutable/6.0.0",
       "hashPath": "system.collections.immutable.6.0.0.nupkg.sha512"
+    },
+    "System.ComponentModel.Annotations/4.6.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-pOd+UhZ3X8xfwKDlgAzowUJNjp8VYVmOHZm++vCd0kq1HZ0zK3mNo2yRXjYgv7Ik/Xi43fmJfND2PLEsQSALCg==",
+      "path": "system.componentmodel.annotations/4.6.0",
+      "hashPath": "system.componentmodel.annotations.4.6.0.nupkg.sha512"
     },
     "System.Configuration.ConfigurationManager/4.7.0": {
       "type": "package",

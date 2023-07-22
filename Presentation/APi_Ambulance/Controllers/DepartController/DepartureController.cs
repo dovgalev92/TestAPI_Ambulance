@@ -17,7 +17,7 @@ namespace APi_Ambulance.Controllers.DepartController
         public async Task<IActionResult> AddCommandDepartAsync(int id, [FromBody] CreateAmbulanceDepartureDto departure)
         {
             await _services.InsertCommand(id, departure);
-            return Ok("Вызов добавлен");
+            return Ok("Выезд добавлен");
         }
     }
 }

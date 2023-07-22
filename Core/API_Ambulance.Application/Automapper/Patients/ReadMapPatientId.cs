@@ -1,4 +1,4 @@
-﻿using APi_Ambulance.Domain.DTO.DToPatient;
+﻿using APi_Ambulance.Domain.DTO.DTOPatient;
 using APi_Ambulance.Domain.Entity;
 using AutoMapper;
 using System;
@@ -11,9 +11,9 @@ namespace API_Ambulance.Application.Automapper.Patients
 {
     public class ReadMapPatientId : Profile
     {
-        public ReadMapPatientId() 
+        public ReadMapPatientId()
         {
-            CreateMap<Patient, PatientReadDto>();
+            CreateMap<Patient, PatientReadIdDto>();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace APi_Ambulance.Domain.Entity
     public class Locality
     {
         public int LocalityId { get; set; }
-        public string Name { get; set; } = string.Empty;
+        public string NameLocality { get; set; } = string.Empty;
 
         //связи
         public ICollection<Patient>? Patients { get; set; }

@@ -36,11 +36,8 @@ namespace APi_Ambulance.Domain.Entity
         public string Priority { get; set; }
         public string ResultDepart { get; set; }
         
-
         // связи
         public CallingAmbulance Calling { get; set; }
-        public Patient Patient { get; set; }
-        public int PatientId { get; set; }
         public int CallingAmbulanceId { get; set; }
     }
 }

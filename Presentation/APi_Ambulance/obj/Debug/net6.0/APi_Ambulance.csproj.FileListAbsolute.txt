@@ -79,3 +79,7 @@ C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\
 C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\API_Ambulance.Application.dll
 C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\API_Ambulance.Application.pdb
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\GenericServices.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\StatusGeneric.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Admin\ProjectFilles\APi_Ambulance\Presentation\APi_Ambulance\bin\Debug\net6.0\Newtonsoft.Json.dll

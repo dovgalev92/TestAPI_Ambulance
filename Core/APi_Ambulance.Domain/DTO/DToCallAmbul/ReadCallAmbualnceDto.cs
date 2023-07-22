@@ -57,7 +57,5 @@ namespace APi_Ambulance.Domain.DTO.DToCallAmbul
         public string Priority { get; set; }
         public string ResultDepart { get; set; }
 
-        //public Patient Patient { get; set; }
-        //public AmbulanceDeparture AmbulanceDeparture { get; set; }
     }
 }

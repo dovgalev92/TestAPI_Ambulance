@@ -1,5 +1,4 @@
 ﻿using APi_Ambulance.Domain.Entity;
-using APi_Ambulance.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -40,8 +39,6 @@ namespace APi_Ambulance.Domain.DTO.DtoCallDepartrure
         public  string? Priority { get; set; }
         public string? ResultDepart { get; set; }
 
-        // связи
-        public Patient? Patient { get; set; }
         
     }
 }
