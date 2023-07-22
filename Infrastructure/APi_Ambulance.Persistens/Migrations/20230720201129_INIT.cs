@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace APi_Ambulance.Persistens.Migrations
 {
-    public partial class InitDb : Migration
+    public partial class INIT : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -15,7 +15,7 @@ namespace APi_Ambulance.Persistens.Migrations
                 {
                     LocalityId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    NameLocality = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -80,7 +80,7 @@ namespace APi_Ambulance.Persistens.Migrations
                 {
                     CallingAmbulanceId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    NameOfCAllAmbulance = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateCall = table.Column<DateTime>(type: "date", nullable: false),
                     TimeCall = table.Column<TimeSpan>(type: "time", nullable: false),
                     CauseCall = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -112,7 +112,6 @@ namespace APi_Ambulance.Persistens.Migrations
                     NameHospital = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Priority = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ResultDepart = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PatientId = table.Column<int>(type: "int", nullable: false),
                     CallingAmbulanceId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -124,11 +123,6 @@ namespace APi_Ambulance.Persistens.Migrations
                         principalTable: "CallingAmbulances",
                         principalColumn: "CallingAmbulanceId",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_AmbulanceDepartures_Patients_PatientId",
-                        column: x => x.PatientId,
-                        principalTable: "Patients",
-                        principalColumn: "PatientId");
                 });
 
             migrationBuilder.CreateIndex(
@@ -136,11 +130,6 @@ namespace APi_Ambulance.Persistens.Migrations
                 table: "AmbulanceDepartures",
                 column: "CallingAmbulanceId",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_AmbulanceDepartures_PatientId",
-                table: "AmbulanceDepartures",
-                column: "PatientId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CallingAmbulances_PatientId",

@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace APi_Ambulance.Persistens.Migrations
 {
     [DbContext(typeof(EfCoreDbContext))]
-    [Migration("20230716193218_UpdateEntityLocality")]
-    partial class UpdateEntityLocality
+    [Migration("20230720201129_INIT")]
+    partial class INIT
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -48,9 +48,6 @@ namespace APi_Ambulance.Persistens.Migrations
                     b.Property<int>("NumberAccident_AssistantSquad")
                         .HasColumnType("int");
 
-                    b.Property<int>("PatientId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Priority")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -69,8 +66,6 @@ namespace APi_Ambulance.Persistens.Migrations
 
                     b.HasIndex("CallingAmbulanceId")
                         .IsUnique();
-
-                    b.HasIndex("PatientId");
 
                     b.ToTable("AmbulanceDepartures");
                 });
@@ -207,15 +202,7 @@ namespace APi_Ambulance.Persistens.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("APi_Ambulance.Domain.Entity.Patient", "Patient")
-                        .WithMany("Departures")
-                        .HasForeignKey("PatientId")
-                        .OnDelete(DeleteBehavior.ClientCascade)
-                        .IsRequired();
-
                     b.Navigation("Calling");
-
-                    b.Navigation("Patient");
                 });
 
             modelBuilder.Entity("APi_Ambulance.Domain.Entity.CallingAmbulance", b =>
@@ -271,8 +258,6 @@ namespace APi_Ambulance.Persistens.Migrations
             modelBuilder.Entity("APi_Ambulance.Domain.Entity.Patient", b =>
                 {
                     b.Navigation("CallingAmbulances");
-
-                    b.Navigation("Departures");
                 });
 
             modelBuilder.Entity("APi_Ambulance.Domain.Entity.Street", b =>

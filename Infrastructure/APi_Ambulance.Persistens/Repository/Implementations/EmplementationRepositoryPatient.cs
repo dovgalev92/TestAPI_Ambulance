@@ -14,14 +14,14 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
             _context = context;
         }
 
-        public void AddNewCommandAsync(Patient create)
+        public async Task AddNewCommandAsync(Patient create)
         {
             if(create==null)
             {
                 throw new ArgumentNullException(nameof(create));
             }
             _context.Entry(create).State = EntityState.Added;
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Patient>> GetAllCommandAsync()
@@ -45,18 +45,16 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
             .SingleOrDefaultAsync());
         }
 
-        public  IStatusGeneric UpdateCommand(Patient update)
+        public async Task<IStatusGeneric> UpdateCommandAsync(Patient update)
         {
             var status = new StatusGenericHandler();
             if(update == null)
             {
-                status.AddError("параметр метода UpdateCommand имеет значение null", nameof(update));
+                status.AddError("параметр метода  имеет значение null", nameof(update));
             }
-            if(!status.IsValid)
-            return status;
-
-            _context.Entry(update).State = EntityState.Modified;
-            _context.SaveChanges();
+            if (status.IsValid)
+            _context.Entry(update!).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
             return status;
         }
     }

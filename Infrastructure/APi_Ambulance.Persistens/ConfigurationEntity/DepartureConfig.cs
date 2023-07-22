@@ -14,11 +14,7 @@ namespace APi_Ambulance.Persistens.ConfigurationEntity
                 .HasForeignKey<AmbulanceDeparture>(fk => fk.CallingAmbulanceId)
                 .OnDelete(DeleteBehavior.Cascade)
                 .IsRequired();
-            entity.
-                HasOne(p => p.Patient)
-                .WithMany(d => d.Departures)
-                .HasForeignKey(fk => fk.PatientId)
-                .OnDelete(DeleteBehavior.ClientCascade);
+
         }
     }
 }

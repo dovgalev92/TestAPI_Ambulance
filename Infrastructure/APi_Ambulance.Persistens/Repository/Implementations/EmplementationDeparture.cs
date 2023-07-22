@@ -13,7 +13,7 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
         {
             _context = context;
         }
-       // метод под замену!!!
+
         public async Task InsertCommandId(int id, AmbulanceDeparture insert)
         {
             if (id == 0 && insert == null)
@@ -21,7 +21,6 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
                 throw new ArgumentNullException("id", nameof(insert));
             }
             insert.Calling = await Task.Run(() => _context.CallingAmbulances.Where(c => c.CallingAmbulanceId == id).SingleOrDefaultAsync());
-            insert.Patient = await _context.Patients.Where(i => i.PatientId == id).FirstOrDefaultAsync();
 
             await _context.AddAsync(insert);
             await _context.SaveChangesAsync();
