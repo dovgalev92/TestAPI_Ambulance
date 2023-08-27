@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using APi_Ambulance.Persistens.CodeEfCore;
 using APi_Ambulance.Persistens.Repository.Interfaces.Patient;
 using StatusGeneric;
+using APi_Ambulance.Domain.DTO.DToPatient;
+using APi_Ambulance.Domain.DTO.DTOPatient;
 
 namespace APi_Ambulance.Persistens.Repository.Implementations
 {
@@ -56,6 +58,27 @@ namespace APi_Ambulance.Persistens.Repository.Implementations
             _context.Entry(update!).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return status;
+        }
+        public async Task<ActionSearchPatientDto> GetSearchPatient(PatientFilter filter)
+        {
+            if(filter.Search == null)
+            {
+                await _context.Patients.ToListAsync();
+            }
+            var search = _context.Patients.AsNoTracking()
+                .Where(x => x.Name.Contains(filter.Search) || x.Family_Name.Contains(filter.Search))
+                .Include(l => l.Locality)
+                .Include(s => s.Street)
+                .ToList();
+
+            var countPatient = search.Count();
+
+            return new ActionSearchPatientDto()
+            {
+                Count = countPatient,
+                PatientReads = search
+            };
+            
         }
     }
 }
